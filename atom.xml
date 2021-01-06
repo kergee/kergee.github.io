@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.dmnotes.cn</id>
     <title>Gridea</title>
-    <updated>2021-01-06T06:20:15.333Z</updated>
+    <updated>2021-01-06T06:30:38.249Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.dmnotes.cn"/>
     <link rel="self" href="https://blog.dmnotes.cn/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://blog.dmnotes.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <title type="html"><![CDATA[备份啊备份]]></title>
         <id>https://blog.dmnotes.cn/post/hello-gridea/</id>
         <link href="https://blog.dmnotes.cn/post/hello-gridea/">
         </link>
