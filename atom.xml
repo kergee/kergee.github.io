@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.dmnotes.cn</id>
     <title>Gridea</title>
-    <updated>2021-01-06T06:30:38.249Z</updated>
+    <updated>2021-01-06T08:06:36.477Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.dmnotes.cn"/>
     <link rel="self" href="https://blog.dmnotes.cn/atom.xml"/>
@@ -10,6 +10,91 @@
     <logo>https://blog.dmnotes.cn/images/avatar.png</logo>
     <icon>https://blog.dmnotes.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[普通JDBC和Spring JDBC区别]]></title>
+        <id>https://blog.dmnotes.cn/post/spring_jdbc/</id>
+        <link href="https://blog.dmnotes.cn/post/spring_jdbc/">
+        </link>
+        <updated>2021-01-06T06:52:26.000Z</updated>
+        <content type="html"><![CDATA[<p>以MySQL为例，参考<sup><a href="https://stackoverflow.com/questions/9469643/difference-between-spring-jdbc-vs-plain-jdbc">1</a>、<a href="https://www.journaldev.com/2509/java-datasource-jdbc-datasource-example">2</a></sup></p>
+<pre><code class="language-Java">//只需要mysql-connector-java-5.1.49.jar
+public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+	Connection connection = DriverManager.getConnection(
+			&quot;jdbc:mysql://localhost:3306/mycart?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&quot;, &quot;root&quot;,
+			&quot;1234&quot;);
+	Statement statement = connection.createStatement();
+	ResultSet resultSet = statement.executeQuery(&quot;SELECT COUNT(*) FROM userinfo&quot;);
+	resultSet.next();
+	int c0 = resultSet.getInt(1);
+	System.out.println(c0);
+	resultSet.close();
+	statement.close();
+	connection.close();
+
+	MysqlDataSource ds = new MysqlDataSource();
+	ds.setURL(&quot;jdbc:mysql://localhost:3306/mycart?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&quot;);
+	ds.setUser(&quot;root&quot;);
+	ds.setPassword(&quot;1234&quot;);
+	Connection conn = ds.getConnection();
+	Statement state = conn.createStatement();
+	ResultSet res = state.executeQuery(&quot;SELECT COUNT(*) FROM userinfo&quot;);
+	res.next();
+	int c1 = res.getInt(1);
+	System.out.println(c1);
+	res.close();
+	state.close();
+	conn.close();		
+}
+</code></pre>
+<p>Spring JdbcTemplate(除了MySQL驱动还需要5个Spring基础包及Jdbc和tx事务包)</p>
+<pre><code class="language-Java">public static void main(String[] args) {
+	MysqlDataSource ds = new MysqlDataSource();
+	ds.setURL(&quot;jdbc:mysql://localhost:3306/mycart?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&quot;);
+	ds.setUser(&quot;root&quot;);
+	ds.setPassword(&quot;1234&quot;);
+	int c0 = new JdbcTemplate(ds).queryForObject(&quot;SELECT COUNT(*) FROM userinfo&quot;, Integer.class);
+	System.out.println(c0);
+
+	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
+	JdbcTemplate jdbcTemplate = (JdbcTemplate) applicationContext.getBean(&quot;jdbcTemplate&quot;);
+	int c1 = jdbcTemplate.queryForObject(&quot;SELECT COUNT(*) FROM userinfo&quot;, Integer.class);
+	System.out.println(c1);
+	((ClassPathXmlApplicationContext)applicationContext).close();
+}
+</code></pre>
+<p>当然applicationContext.xml如下：</p>
+<pre><code class="language-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+	xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd&quot;&gt;
+	&lt;!--1配置数据源 --&gt;
+	&lt;bean id=&quot;dataSource&quot;
+		class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
+		&lt;!--数据库驱动 --&gt;
+		&lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;
+		&lt;!--连接数据库的ur1 --&gt;
+		&lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/mycart&quot; /&gt;
+		&lt;!--连接数据库的用户名 --&gt;
+		&lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;
+		&lt;!--连接数据库的密码 --&gt;
+		&lt;property name=&quot;password&quot; value=&quot;1234&quot; /&gt;
+	&lt;/bean&gt;
+	&lt;!--2配置JDBC模板 --&gt;
+	&lt;bean id=&quot;jdbcTemplate&quot; class=&quot;org.springframework.jdbc.core.JdbcTemplate&quot;&gt;
+		&lt;!--默认必须使用数据源 --&gt;
+		&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+	&lt;/bean&gt;
+	&lt;!-- 定义id为userDao的Bean --&gt;
+	&lt;bean id=&quot;userDao&quot; class=&quot;com.ssm.jdbc.UserDaoImpl&quot;&gt;
+		&lt;!--将 jdbcTemplate注入到 userDao实例中 --&gt;
+		&lt;property name=&quot;jdbcTemplate&quot; ref=&quot;jdbcTemplate&quot; /&gt;
+	&lt;/bean&gt;	
+&lt;/beans&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[备份啊备份]]></title>
         <id>https://blog.dmnotes.cn/post/hello-gridea/</id>
