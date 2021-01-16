@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.dmnotes.cn</id>
     <title>备忘录</title>
-    <updated>2021-01-07T02:54:01.633Z</updated>
+    <updated>2021-01-16T12:03:03.081Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.dmnotes.cn"/>
     <link rel="self" href="https://blog.dmnotes.cn/atom.xml"/>
@@ -10,6 +10,63 @@
     <logo>https://blog.dmnotes.cn/images/avatar.png</logo>
     <icon>https://blog.dmnotes.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, 备忘录</rights>
+    <entry>
+        <title type="html"><![CDATA[物联网学习笔记]]></title>
+        <id>https://blog.dmnotes.cn/post/wu-lian-wang-xue-xi-bi-ji/</id>
+        <link href="https://blog.dmnotes.cn/post/wu-lian-wang-xue-xi-bi-ji/">
+        </link>
+        <updated>2021-01-16T12:01:01.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://blog.dmnotes.cn/post-images/1610798566793.jpg" alt="" loading="lazy">MQTT</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[学习原则]]></title>
+        <id>https://blog.dmnotes.cn/post/xue-xi-yuan-ze/</id>
+        <link href="https://blog.dmnotes.cn/post/xue-xi-yuan-ze/">
+        </link>
+        <updated>2021-01-09T13:17:33.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>有官方文档或Tutorial尽量先过一遍</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[重拾iOS开发]]></title>
+        <id>https://blog.dmnotes.cn/post/chong-shi-ios-kai-fa/</id>
+        <link href="https://blog.dmnotes.cn/post/chong-shi-ios-kai-fa/">
+        </link>
+        <updated>2021-01-09T12:32:49.000Z</updated>
+        <content type="html"><![CDATA[<p>20210109拿出老机器2013MBP，照着<a href="https://developer.apple.com/tutorials/swiftui">教程</a>开始。</p>
+<p>免费课程<br>
+https://www.bilibili.com/video/BV1rb411C7eN<br>
+https://www.hackingwithswift.com/100/swiftui</p>
+<p>付费课程<br>
+https://designcode.io/<br>
+https://sspai.com/series/147/list<br>
+https://www.raywenderlich.com/<br>
+https://juejin.cn/book/6844733819036155918</p>
+<p>参考文章<br>
+https://developer.aliyun.com/article/706780<br>
+https://www.bmpi.dev/dev/zero-to-one/</p>
+<p>学些路径：AppleTutorials--&gt;hackingwithswift--&gt;CS193P，然后是其它。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Maven学习笔记]]></title>
+        <id>https://blog.dmnotes.cn/post/maven-xue-xi-bi-ji/</id>
+        <link href="https://blog.dmnotes.cn/post/maven-xue-xi-bi-ji/">
+        </link>
+        <updated>2021-01-07T14:43:14.000Z</updated>
+        <content type="html"><![CDATA[<p>修改.m2文件夹位置</p>
+<ul>
+<li>.m2/settings.xml和conf/setting.xml都加一行<br>
+<code>&lt;localRepository&gt;新路径\repository&lt;/localRepository&gt;</code></li>
+<li>windows-&gt;preferences-&gt;maven-&gt;installations加上Maven路径<br>
+windows-&gt;preferences-&gt;maven-&gt;User Settings加上Maven setting.xml文件</li>
+</ul>
+<p>Eclipse参考https://www.cnblogs.com/shihaiming/p/5803957.html</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Prism框架]]></title>
         <id>https://blog.dmnotes.cn/post/prism-kuang-jia/</id>
@@ -29,6 +86,12 @@
 <img src="https://blog.dmnotes.cn/post-images/1609987291789.png" alt="快速参考备忘单" width="100" loading="lazy"></p>
 <p><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a><br>
 <img src="https://blog.dmnotes.cn/post-images/1609987997030.png" alt="Y分钟学X门语言" width="100" loading="lazy"></p>
+<p>https://30secondsofinterviews.org/<br>
+https://www.30secondsofcode.org/</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web">面向 Web 开发者的文档</a></p>
+<p><a href="http://huziketang.mangojuice.top/books/react/">React.js 小书</a><br>
+<a href="https://zh.javascript.info/">现代 JavaScript 教程</a></p>
+<p><a href="http://www.yinwang.org/blog-cn/2012/08/01/interpreter">怎样写一个解释器</a></p>
 ]]></content>
     </entry>
     <entry>
@@ -37,7 +100,8 @@
         <link href="https://blog.dmnotes.cn/post/spring_jdbc/">
         </link>
         <updated>2021-01-06T06:52:26.000Z</updated>
-        <content type="html"><![CDATA[<p>以MySQL为例，参考<sup><a href="https://stackoverflow.com/questions/9469643/difference-between-spring-jdbc-vs-plain-jdbc">1</a>、<a href="https://www.journaldev.com/2509/java-datasource-jdbc-datasource-example">2</a></sup></p>
+        <content type="html"><![CDATA[<p>以MySQL为例，参考<sup><a href="https://stackoverflow.com/questions/9469643/difference-between-spring-jdbc-vs-plain-jdbc">1</a>、<a href="https://www.journaldev.com/2509/java-datasource-jdbc-datasource-example">2</a></sup><br>
+首先得有—个叫连接(Connection) 的东西，用来代表和数据库的连接；想执行SQL 怎么办？用一个Statement 来表示；SQL 返回的结果也得有—个抽象的概念： ResultSet 。</p>
 <pre><code class="language-Java">//只需要mysql-connector-java-5.1.49.jar
 public static void main(String[] args) throws ClassNotFoundException, SQLException {
 	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);

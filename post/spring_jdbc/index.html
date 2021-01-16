@@ -15,12 +15,12 @@
     
 
   <meta name="description" content="以MySQL为例，参考1、2
-//只需要mysql-connector-java-5.1.49.jar
-public static void main(String[] args) throws ClassNotFoundException..." />
+首先得有—个叫连接(Connection) 的东西，用来代表和数据库的连接；想执行SQL 怎么办？用一个Statement 来表示；SQL 返回的结果也得有—个抽象的概念： ResultSet 。
+//只需要m..." />
   <meta property="og:title" content="普通JDBC和Spring JDBC区别 - 备忘录">
   <meta property="og:description" content="以MySQL为例，参考1、2
-//只需要mysql-connector-java-5.1.49.jar
-public static void main(String[] args) throws ClassNotFoundException..." />
+首先得有—个叫连接(Connection) 的东西，用来代表和数据库的连接；想执行SQL 怎么办？用一个Statement 来表示；SQL 返回的结果也得有—个抽象的概念： ResultSet 。
+//只需要m..." />
   <meta property="og:type" content="articles">
   <meta property="og:url" content="https://blog.dmnotes.cn/post/spring_jdbc/" />
   <meta property="og:image" content="https://blog.dmnotes.cn/images/avatar.png">
@@ -28,8 +28,8 @@ public static void main(String[] args) throws ClassNotFoundException..." />
   <meta property="og:image:width" content="1200">
   <meta name="twitter:title" content="普通JDBC和Spring JDBC区别 - 备忘录">
   <meta name="twitter:description" content="以MySQL为例，参考1、2
-//只需要mysql-connector-java-5.1.49.jar
-public static void main(String[] args) throws ClassNotFoundException...">
+首先得有—个叫连接(Connection) 的东西，用来代表和数据库的连接；想执行SQL 怎么办？用一个Statement 来表示；SQL 返回的结果也得有—个抽象的概念： ResultSet 。
+//只需要m...">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://blog.dmnotes.cn/post/spring_jdbc/">
 
@@ -66,7 +66,8 @@ public static void main(String[] args) throws ClassNotFoundException...">
           
         </div>
         <div class="markdown mb-8" v-pre>
-          <p>以MySQL为例，参考<sup><a href="https://stackoverflow.com/questions/9469643/difference-between-spring-jdbc-vs-plain-jdbc">1</a>、<a href="https://www.journaldev.com/2509/java-datasource-jdbc-datasource-example">2</a></sup></p>
+          <p>以MySQL为例，参考<sup><a href="https://stackoverflow.com/questions/9469643/difference-between-spring-jdbc-vs-plain-jdbc">1</a>、<a href="https://www.journaldev.com/2509/java-datasource-jdbc-datasource-example">2</a></sup><br>
+首先得有—个叫连接(Connection) 的东西，用来代表和数据库的连接；想执行SQL 怎么办？用一个Statement 来表示；SQL 返回的结果也得有—个抽象的概念： ResultSet 。</p>
 <pre><code class="language-Java">//只需要mysql-connector-java-5.1.49.jar
 public static void main(String[] args) throws ClassNotFoundException, SQLException {
 	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
