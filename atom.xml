@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.dmnotes.cn</id>
     <title>备忘录</title>
-    <updated>2021-01-20T02:16:08.690Z</updated>
+    <updated>2021-04-30T12:06:21.924Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.dmnotes.cn"/>
     <link rel="self" href="https://blog.dmnotes.cn/atom.xml"/>
@@ -11,205 +11,217 @@
     <icon>https://blog.dmnotes.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, 备忘录</rights>
     <entry>
-        <title type="html"><![CDATA[物联网学习笔记]]></title>
-        <id>https://blog.dmnotes.cn/post/wu-lian-wang-xue-xi-bi-ji/</id>
-        <link href="https://blog.dmnotes.cn/post/wu-lian-wang-xue-xi-bi-ji/">
+        <title type="html"><![CDATA[Kettle学习笔记]]></title>
+        <id>https://blog.dmnotes.cn/post/kettle-xue-xi-bi-ji/</id>
+        <link href="https://blog.dmnotes.cn/post/kettle-xue-xi-bi-ji/">
         </link>
-        <updated>2021-01-16T12:01:01.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://blog.dmnotes.cn/post-images/1610798566793.jpg" alt="" loading="lazy">MQTT</p>
+        <updated>2021-04-30T11:54:02.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>Kettle目录文件</strong></p>
+<ul>
+<li>classes：生命周期监听、注册表扩展、日志的配置文件</li>
+<li>Data Integration.app：数据集成应用</li>
+<li>Data Service JDBC Driver：JDBC驱动程序的数据服务docs:文档</li>
+<li>launcher：Kettle的启动配置</li>
+<li>lib：支持库jar包</li>
+<li>libswt： Kettle图形库jar</li>
+<li>plugins：插件</li>
+<li>pwd：kettle集群配置文件</li>
+<li>samples：自带例子</li>
+<li>simple-jndi：jndi连接配置</li>
+<li>system：系统目录</li>
+<li>ui：软件界面</li>
+<li>Carte：启动集群命令(可以启动对应远程服务器)</li>
+<li>Encr：kettle提供的加密算法</li>
+<li>lmport：导入命令</li>
+<li>Kitchen：运行Job的命令</li>
+<li>Pan：运行转换的命令</li>
+<li>purge-utility：清空资料库文件</li>
+<li>runSamples：运行sample文件夹里面的文件</li>
+<li>set-pentaho-env：设置环境变量脚本</li>
+<li>Spoon：启动KettleUI界面</li>
+<li>SpoonConsole/SpoonDebug：这二个spoon运行时候会打印对应的信息或者日志</li>
+</ul>
+<p><strong>Kettle核心组件</strong></p>
+<ul>
+<li>Spoon：通过图形接口，用于编辑作业和转换的桌面应用。</li>
+<li>Pan：一个独立的命令行程序，用于执行由Spoon编辑的转换和作业。</li>
+<li>Kitchen：一个独立的命令行程序，用于执行由Spoon编辑的作业。</li>
+<li>carte：一个轻量级的Web容器，用于建立专用、远程的ETL Server。</li>
+</ul>
+<p><strong>Kettle模型概念</strong><br>
+<img src="https://blog.dmnotes.cn/post-images/1619784347151.png" alt="分为Job和transformation" loading="lazy"></p>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[学习原则]]></title>
-        <id>https://blog.dmnotes.cn/post/xue-xi-yuan-ze/</id>
-        <link href="https://blog.dmnotes.cn/post/xue-xi-yuan-ze/">
+        <title type="html"><![CDATA[Oracle备忘录]]></title>
+        <id>https://blog.dmnotes.cn/post/oracle-bei-wang-lu/</id>
+        <link href="https://blog.dmnotes.cn/post/oracle-bei-wang-lu/">
         </link>
-        <updated>2021-01-09T13:17:33.000Z</updated>
-        <content type="html"><![CDATA[<ol>
-<li>有官方文档或Tutorial尽量先过一遍</li>
+        <updated>2021-04-23T10:35:00.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/qiuyufeng/article/details/98451821">oracle19c在centos7.6上安装</a></p>
+<p>sys/change_on_install<br>
+system/manager<br>
+scott/tiger</p>
+<p><a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/axdbi/oracle-database-system-privileges-accounts-and-passwords.html">Oracle 数据库系统特权帐户和密码</a></p>
+<p><strong>工具</strong><br>
+Toad for Oracle，需要把instantclient加入路径。</p>
+<p>遗留sqlplus 乱码的问题</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux备忘录]]></title>
+        <id>https://blog.dmnotes.cn/post/linux-bei-wang-lu/</id>
+        <link href="https://blog.dmnotes.cn/post/linux-bei-wang-lu/">
+        </link>
+        <updated>2021-04-23T06:45:40.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://sspai.com/post/59297">修改SSH欢迎画面</a><br>
+yum update &amp;&amp; yum upgrade -y<br>
+yum install dnf-plugins-core -y<br>
+dnf-2 copr enable konimex/neofetch<br>
+dnf-2 install neofetch</p>
+<p>后台执行：<br>
+nohup command &amp;</p>
+<p>.vimrc<br>
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936<br>
+set termencoding=utf-8<br>
+set encoding=utf-8</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Optical file transfer]]></title>
+        <id>https://blog.dmnotes.cn/post/optical-file-transfer/</id>
+        <link href="https://blog.dmnotes.cn/post/optical-file-transfer/">
+        </link>
+        <updated>2021-03-29T01:05:13.000Z</updated>
+        <content type="html"><![CDATA[<p>http://wrobel.wroclaw.pl/opticalfiletransfer/en/win/index.php</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VMWare使用备忘]]></title>
+        <id>https://blog.dmnotes.cn/post/vmware-shi-yong-bei-wang/</id>
+        <link href="https://blog.dmnotes.cn/post/vmware-shi-yong-bei-wang/">
+        </link>
+        <updated>2021-03-01T03:11:49.000Z</updated>
+        <content type="html"><![CDATA[<p>和Hype-V冲突 可以暂时关闭bcdedit /set hypervisorlaunchtype off，也可以修改引导</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数码：支持微软手柄的游戏]]></title>
+        <id>https://blog.dmnotes.cn/post/shu-ma-zhi-chi-wei-ruan-shou-bing-de-you-xi/</id>
+        <link href="https://blog.dmnotes.cn/post/shu-ma-zhi-chi-wei-ruan-shou-bing-de-you-xi/">
+        </link>
+        <updated>2021-02-18T01:13:16.000Z</updated>
+        <content type="html"><![CDATA[<p>狂野飙车9<br>
+幻影猫2<br>
+我的世界</p>
+<p>巅峰坦克？</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数学笔记]]></title>
+        <id>https://blog.dmnotes.cn/post/shu-xue-bi-ji/</id>
+        <link href="https://blog.dmnotes.cn/post/shu-xue-bi-ji/">
+        </link>
+        <updated>2021-02-17T12:48:46.000Z</updated>
+        <content type="html"><![CDATA[<p>工具：<br>
+https://zs.symbolab.com/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Javascript学习笔记]]></title>
+        <id>https://blog.dmnotes.cn/post/javascript-xue-xi-bi-ji/</id>
+        <link href="https://blog.dmnotes.cn/post/javascript-xue-xi-bi-ji/">
+        </link>
+        <updated>2021-02-02T09:15:08.000Z</updated>
+        <content type="html"><![CDATA[<p>https://javascript.ruanyifeng.com/tool/bower.html<br>
+https://javascript.ruanyifeng.com/nodejs/basic.html<br>
+https://wangdoc.com/javascript/</p>
+<p>https://www.liaoxuefeng.com/wiki/1022910821149312</p>
+<p>https://v3.cn.vuejs.org/<br>
+https://cli.vuejs.org/zh/guide/<br>
+https://simulatedgreg.gitbooks.io/electron-vue/content/cn/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[微信小程序备忘录]]></title>
+        <id>https://blog.dmnotes.cn/post/wei-xin-xiao-cheng-xu-bei-wang-lu/</id>
+        <link href="https://blog.dmnotes.cn/post/wei-xin-xiao-cheng-xu-bei-wang-lu/">
+        </link>
+        <updated>2021-02-01T13:02:15.000Z</updated>
+        <summary type="html"><![CDATA[<p>参考阮一峰的https://github.com/ruanyf/wechat-miniprogram-demos</p>
+<p>infoq.cn上的https://xie.infoq.cn/article/b76c472200eed554dd39f291d<br>
+对应源码 https://github.com/gogoswift/luckin</p>
+<p>以及https://www.kancloud.cn/lixu/wechat_mp/790164</p>
+<p>微信小程序云开发坚果商城项目实战 https://github.com/mtcarpenter/nux-shop</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>参考阮一峰的https://github.com/ruanyf/wechat-miniprogram-demos</p>
+<p>infoq.cn上的https://xie.infoq.cn/article/b76c472200eed554dd39f291d<br>
+对应源码 https://github.com/gogoswift/luckin</p>
+<p>以及https://www.kancloud.cn/lixu/wechat_mp/790164</p>
+<p>微信小程序云开发坚果商城项目实战 https://github.com/mtcarpenter/nux-shop</p>
+<!-- more -->
+<p>样式就直接用WeUI吧https://developers.weixin.qq.com/miniprogram/dev/extended/weui/</p>
+<p>demo</p>
+<ol>
+<li>https://github.com/xiaobei666/weixin-xiaochengxu666-info</li>
+</ol>
+<p>反编译</p>
+<ol>
+<li>https://www.infoq.cn/article/qyihrhsgwbbygvbmgazt</li>
+<li>https://www.infoq.cn/article/229rWm46wJjqrEWHJatY</li>
 </ol>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[重拾iOS开发]]></title>
-        <id>https://blog.dmnotes.cn/post/chong-shi-ios-kai-fa/</id>
-        <link href="https://blog.dmnotes.cn/post/chong-shi-ios-kai-fa/">
+        <title type="html"><![CDATA[电子书使用指南]]></title>
+        <id>https://blog.dmnotes.cn/post/ebook/</id>
+        <link href="https://blog.dmnotes.cn/post/ebook/">
         </link>
-        <updated>2021-01-09T12:32:49.000Z</updated>
-        <content type="html"><![CDATA[<p>20210109拿出老机器2013MBP，照着<a href="https://developer.apple.com/tutorials/swiftui">教程</a>开始。</p>
-<p>免费课程<br>
-https://www.bilibili.com/video/BV1rb411C7eN<br>
-https://www.hackingwithswift.com/100/swiftui</p>
-<p>付费课程<br>
-https://designcode.io/<br>
-https://sspai.com/series/147/list<br>
-https://www.raywenderlich.com/<br>
-https://juejin.cn/book/6844733819036155918</p>
-<p>参考文章<br>
-https://developer.aliyun.com/article/706780<br>
-https://www.bmpi.dev/dev/zero-to-one/</p>
-<p>学些路径：AppleTutorials--&gt;hackingwithswift--&gt;CS193P，然后是其它。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Maven学习笔记]]></title>
-        <id>https://blog.dmnotes.cn/post/maven-xue-xi-bi-ji/</id>
-        <link href="https://blog.dmnotes.cn/post/maven-xue-xi-bi-ji/">
-        </link>
-        <updated>2021-01-07T14:43:14.000Z</updated>
-        <content type="html"><![CDATA[<p>修改.m2文件夹位置</p>
+        <updated>2021-01-30T01:07:53.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>硬件方面</li>
+</ol>
 <ul>
-<li>.m2/settings.xml和conf/setting.xml都加一行<br>
-<code>&lt;localRepository&gt;新路径\repository&lt;/localRepository&gt;</code></li>
-<li>windows-&gt;preferences-&gt;maven-&gt;installations加上Maven路径<br>
-windows-&gt;preferences-&gt;maven-&gt;User Settings加上Maven setting.xml文件</li>
+<li>
+<p><strong>Sony DPT-RP1</strong>主要用来阅读计算机书籍<br>
+2815收了一台二手国行裸机（套子+Felica卡￥50），到手版本1.4.01.16100，然后先升级了1.6.50.14130，参考以下教程破解，安装了微信读书、豆瓣阅读和KoReader<br>
+https://zhuanlan.zhihu.com/p/261137961<br>
+https://zhuanlan.zhihu.com/p/125074170<br>
+https://github.com/HappyZ/dpt-tools<br>
+https://post.smzdm.com/p/ar07neqg/<br>
+<img src="https://blog.dmnotes.cn/post-images/1612057862482.jpg" alt="这可能是恢复密钥？" loading="lazy"><br>
+要是出掉了准备换Boox Max3</p>
+</li>
+<li>
+<p><strong>Facenote F1</strong>主要用来阅读小说</p>
+</li>
 </ul>
-<p>Eclipse参考https://www.cnblogs.com/shihaiming/p/5803957.html</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Prism框架]]></title>
-        <id>https://blog.dmnotes.cn/post/prism-kuang-jia/</id>
-        <link href="https://blog.dmnotes.cn/post/prism-kuang-jia/">
-        </link>
-        <updated>2021-01-07T02:44:57.000Z</updated>
-        <content type="html"><![CDATA[<p>不错的参考<a href="https://www.pluralsight.com/courses/prism-wpf-introduction">Introduction to Prism for WPF</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[网址收藏夹]]></title>
-        <id>https://blog.dmnotes.cn/post/wang-luo-xue-xi-zi-yuan/</id>
-        <link href="https://blog.dmnotes.cn/post/wang-luo-xue-xi-zi-yuan/">
-        </link>
-        <updated>2021-01-07T02:38:21.000Z</updated>
-        <content type="html"><![CDATA[<p><a href="https://quickref.me/">Quick Reference Cheat Sheet</a><br>
-<img src="https://blog.dmnotes.cn/post-images/1609987291789.png" alt="快速参考备忘单" width="100" loading="lazy"></p>
-<p><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a><br>
-<img src="https://blog.dmnotes.cn/post-images/1609987997030.png" alt="Y分钟学X门语言" width="100" loading="lazy"></p>
-<p>https://30secondsofinterviews.org/<br>
-https://www.30secondsofcode.org/</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web">面向 Web 开发者的文档</a></p>
-<p><a href="http://huziketang.mangojuice.top/books/react/">React.js 小书</a><br>
-<a href="https://zh.javascript.info/">现代 JavaScript 教程</a></p>
-<p><a href="http://www.yinwang.org/blog-cn/2012/08/01/interpreter">怎样写一个解释器</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[普通JDBC和Spring JDBC区别]]></title>
-        <id>https://blog.dmnotes.cn/post/spring_jdbc/</id>
-        <link href="https://blog.dmnotes.cn/post/spring_jdbc/">
-        </link>
-        <updated>2021-01-06T06:52:26.000Z</updated>
-        <content type="html"><![CDATA[<p>以MySQL为例，参考<sup><a href="https://stackoverflow.com/questions/9469643/difference-between-spring-jdbc-vs-plain-jdbc">1</a>、<a href="https://www.journaldev.com/2509/java-datasource-jdbc-datasource-example">2</a></sup><br>
-首先得有—个叫连接(Connection) 的东西，用来代表和数据库的连接；想执行SQL 怎么办？用一个Statement 来表示；SQL 返回的结果也得有—个抽象的概念： ResultSet 。</p>
-<pre><code class="language-Java">//只需要mysql-connector-java-5.1.49.jar
-public static void main(String[] args) throws ClassNotFoundException, SQLException {
-	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
-	Connection connection = DriverManager.getConnection(
-			&quot;jdbc:mysql://localhost:3306/mycart?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&quot;, &quot;root&quot;,
-			&quot;1234&quot;);
-	Statement statement = connection.createStatement();
-	ResultSet resultSet = statement.executeQuery(&quot;SELECT COUNT(*) FROM userinfo&quot;);
-	resultSet.next();
-	int c0 = resultSet.getInt(1);
-	System.out.println(c0);
-	resultSet.close();
-	statement.close();
-	connection.close();
-
-	MysqlDataSource ds = new MysqlDataSource();
-	ds.setURL(&quot;jdbc:mysql://localhost:3306/mycart?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&quot;);
-	ds.setUser(&quot;root&quot;);
-	ds.setPassword(&quot;1234&quot;);
-	Connection conn = ds.getConnection();
-	Statement state = conn.createStatement();
-	ResultSet res = state.executeQuery(&quot;SELECT COUNT(*) FROM userinfo&quot;);
-	res.next();
-	int c1 = res.getInt(1);
-	System.out.println(c1);
-	res.close();
-	state.close();
-	conn.close();		
-}
-</code></pre>
-<p>Spring JdbcTemplate(除了MySQL驱动还需要5个Spring基础包及Jdbc和tx事务包)</p>
-<pre><code class="language-Java">public static void main(String[] args) {
-	MysqlDataSource ds = new MysqlDataSource();
-	ds.setURL(&quot;jdbc:mysql://localhost:3306/mycart?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&quot;);
-	ds.setUser(&quot;root&quot;);
-	ds.setPassword(&quot;1234&quot;);
-	int c0 = new JdbcTemplate(ds).queryForObject(&quot;SELECT COUNT(*) FROM userinfo&quot;, Integer.class);
-	System.out.println(c0);
-
-	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
-	JdbcTemplate jdbcTemplate = (JdbcTemplate) applicationContext.getBean(&quot;jdbcTemplate&quot;);
-	int c1 = jdbcTemplate.queryForObject(&quot;SELECT COUNT(*) FROM userinfo&quot;, Integer.class);
-	System.out.println(c1);
-	((ClassPathXmlApplicationContext)applicationContext).close();
-}
-</code></pre>
-<p>当然applicationContext.xml如下：</p>
-<pre><code class="language-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-	xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans 
-        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd&quot;&gt;
-	&lt;!--1配置数据源 --&gt;
-	&lt;bean id=&quot;dataSource&quot;
-		class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
-		&lt;!--数据库驱动 --&gt;
-		&lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;
-		&lt;!--连接数据库的ur1 --&gt;
-		&lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/mycart&quot; /&gt;
-		&lt;!--连接数据库的用户名 --&gt;
-		&lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;
-		&lt;!--连接数据库的密码 --&gt;
-		&lt;property name=&quot;password&quot; value=&quot;1234&quot; /&gt;
-	&lt;/bean&gt;
-	&lt;!--2配置JDBC模板 --&gt;
-	&lt;bean id=&quot;jdbcTemplate&quot; class=&quot;org.springframework.jdbc.core.JdbcTemplate&quot;&gt;
-		&lt;!--默认必须使用数据源 --&gt;
-		&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
-	&lt;/bean&gt;
-	&lt;!-- 定义id为userDao的Bean --&gt;
-	&lt;bean id=&quot;userDao&quot; class=&quot;com.ssm.jdbc.UserDaoImpl&quot;&gt;
-		&lt;!--将 jdbcTemplate注入到 userDao实例中 --&gt;
-		&lt;property name=&quot;jdbcTemplate&quot; ref=&quot;jdbcTemplate&quot; /&gt;
-	&lt;/bean&gt;	
-&lt;/beans&gt;
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[备份啊备份]]></title>
-        <id>https://blog.dmnotes.cn/post/hello-gridea/</id>
-        <link href="https://blog.dmnotes.cn/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+<ol start="2">
+<li>软件方面</li>
+</ol>
+<ul>
+<li>
+<p>Sony DPT-RP1上KoReader需要做一些<a href="https://github.com/HappyZ/dpt-tools/wiki/How-to-install-KOReader-on-DPT-RP1">设置</a><br>
+主要是调整DPI和PDF翻页（以及对比度），以及下载<a href="https://post.smzdm.com/p/ammkre34/">字典</a>(内置字典并不是很好用)</p>
+</li>
+<li>
+<p>Calibre真是神器，之前主要用来转格式，然后发现可以<a href="https://post.smzdm.com/p/ax0r4pn9/">配合KoReader使用</a></p>
+</li>
+<li>
+<p>Kindle下载的书籍（需要1.17，高版本Kindle据说不行）可以用Epubor DRM Removal处理</p>
+</li>
+</ul>
+<ol start="3">
+<li>网站资源</li>
+</ol>
+<ul>
+<li>https://mlook.mobi/</li>
+<li>https://www.worldmiao.com/</li>
+<li>https://www.jiumodiary.com/</li>
+<li>(知网，万方等中英文，医学等等数据库入口)[https://31sanyi.neocities.org/]</li>
+<li>http://www.sstir.cn/</li>
+<li><a href="https://www.zjlib.cn/">浙江图书馆</a></li>
+</ul>
 ]]></content>
     </entry>
 </feed>
