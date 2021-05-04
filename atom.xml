@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.dmnotes.cn</id>
     <title>备忘录</title>
-    <updated>2021-04-30T12:10:07.387Z</updated>
+    <updated>2021-05-04T02:36:49.306Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.dmnotes.cn"/>
     <link rel="self" href="https://blog.dmnotes.cn/atom.xml"/>
@@ -10,6 +10,61 @@
     <logo>https://blog.dmnotes.cn/images/avatar.png</logo>
     <icon>https://blog.dmnotes.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, 备忘录</rights>
+    <entry>
+        <title type="html"><![CDATA[Windows 桌面版微信内置浏览器调试]]></title>
+        <id>https://blog.dmnotes.cn/post/windows-zhuo-mian-ban-wei-xin-nei-zhi-liu-lan-qi-diao-shi/</id>
+        <link href="https://blog.dmnotes.cn/post/windows-zhuo-mian-ban-wei-xin-nei-zhi-liu-lan-qi-diao-shi/">
+        </link>
+        <updated>2021-05-04T02:17:27.000Z</updated>
+        <content type="html"><![CDATA[<p>需要找到相应的devtools_resources.pak<br>
+（微信启动参数里增加 --remote-debugging-port=8000 开启Cef的远程调试方式）</p>
+<pre><code class="language-Javascript">const CDP = require('chrome-remote-interface');
+async function example() {
+    let client;
+    try {
+        // connect to endpoint  
+        client = await CDP({
+            port: 8000,
+            local: true
+        });
+        const {
+            Network, Page, Runtime
+        } = client;
+        // setup handlers   
+        Network.requestWillBeSent((params) =&gt; {});
+        Network.responseReceived((params) =&gt; {})
+            // enable events then start!  
+        await Network.enable();
+        await Page.enable();
+        Page.navigate({
+            url: 'chrome://version'
+        }).then((res) =&gt; {});
+        await Page.loadEventFired();
+    } catch (err) {
+        console.error(err);
+    } finally {
+        if (client) {
+            await client.close();
+        }
+    }
+}
+example();
+</code></pre>
+<p><img src="https://blog.dmnotes.cn/post-images/1620095364391.png" alt="对应版本和目录" loading="lazy"><br>
+<a href="https://www.mdeditor.tw/pl/pNyv">参考1</a><br>
+<a href="https://juejin.cn/post/6844904082314887182">参考2</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows常用工具]]></title>
+        <id>https://blog.dmnotes.cn/post/windows-chang-yong-gong-ju/</id>
+        <link href="https://blog.dmnotes.cn/post/windows-chang-yong-gong-ju/">
+        </link>
+        <updated>2021-05-01T03:03:06.000Z</updated>
+        <content type="html"><![CDATA[<p>Beyond Compare<br>
+Charles</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Kettle学习笔记]]></title>
         <id>https://blog.dmnotes.cn/post/kettle-xue-xi-bi-ji/</id>
@@ -140,88 +195,6 @@ https://wangdoc.com/javascript/</p>
 <p>https://v3.cn.vuejs.org/<br>
 https://cli.vuejs.org/zh/guide/<br>
 https://simulatedgreg.gitbooks.io/electron-vue/content/cn/</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[微信小程序备忘录]]></title>
-        <id>https://blog.dmnotes.cn/post/wei-xin-xiao-cheng-xu-bei-wang-lu/</id>
-        <link href="https://blog.dmnotes.cn/post/wei-xin-xiao-cheng-xu-bei-wang-lu/">
-        </link>
-        <updated>2021-02-01T13:02:15.000Z</updated>
-        <summary type="html"><![CDATA[<p>参考阮一峰的https://github.com/ruanyf/wechat-miniprogram-demos</p>
-<p>infoq.cn上的https://xie.infoq.cn/article/b76c472200eed554dd39f291d<br>
-对应源码 https://github.com/gogoswift/luckin</p>
-<p>以及https://www.kancloud.cn/lixu/wechat_mp/790164</p>
-<p>微信小程序云开发坚果商城项目实战 https://github.com/mtcarpenter/nux-shop</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>参考阮一峰的https://github.com/ruanyf/wechat-miniprogram-demos</p>
-<p>infoq.cn上的https://xie.infoq.cn/article/b76c472200eed554dd39f291d<br>
-对应源码 https://github.com/gogoswift/luckin</p>
-<p>以及https://www.kancloud.cn/lixu/wechat_mp/790164</p>
-<p>微信小程序云开发坚果商城项目实战 https://github.com/mtcarpenter/nux-shop</p>
-<!-- more -->
-<p>样式就直接用WeUI吧https://developers.weixin.qq.com/miniprogram/dev/extended/weui/</p>
-<p>demo</p>
-<ol>
-<li>https://github.com/xiaobei666/weixin-xiaochengxu666-info</li>
-</ol>
-<p>反编译</p>
-<ol>
-<li>https://www.infoq.cn/article/qyihrhsgwbbygvbmgazt</li>
-<li>https://www.infoq.cn/article/229rWm46wJjqrEWHJatY</li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[电子书使用指南]]></title>
-        <id>https://blog.dmnotes.cn/post/ebook/</id>
-        <link href="https://blog.dmnotes.cn/post/ebook/">
-        </link>
-        <updated>2021-01-30T01:07:53.000Z</updated>
-        <content type="html"><![CDATA[<ol>
-<li>硬件方面</li>
-</ol>
-<ul>
-<li>
-<p><strong>Sony DPT-RP1</strong>主要用来阅读计算机书籍<br>
-2815收了一台二手国行裸机（套子+Felica卡￥50），到手版本1.4.01.16100，然后先升级了1.6.50.14130，参考以下教程破解，安装了微信读书、豆瓣阅读和KoReader<br>
-https://zhuanlan.zhihu.com/p/261137961<br>
-https://zhuanlan.zhihu.com/p/125074170<br>
-https://github.com/HappyZ/dpt-tools<br>
-https://post.smzdm.com/p/ar07neqg/<br>
-<img src="https://blog.dmnotes.cn/post-images/1612057862482.jpg" alt="这可能是恢复密钥？" loading="lazy"><br>
-要是出掉了准备换Boox Max3</p>
-</li>
-<li>
-<p><strong>Facenote F1</strong>主要用来阅读小说</p>
-</li>
-</ul>
-<ol start="2">
-<li>软件方面</li>
-</ol>
-<ul>
-<li>
-<p>Sony DPT-RP1上KoReader需要做一些<a href="https://github.com/HappyZ/dpt-tools/wiki/How-to-install-KOReader-on-DPT-RP1">设置</a><br>
-主要是调整DPI和PDF翻页（以及对比度），以及下载<a href="https://post.smzdm.com/p/ammkre34/">字典</a>(内置字典并不是很好用)</p>
-</li>
-<li>
-<p>Calibre真是神器，之前主要用来转格式，然后发现可以<a href="https://post.smzdm.com/p/ax0r4pn9/">配合KoReader使用</a></p>
-</li>
-<li>
-<p>Kindle下载的书籍（需要1.17，高版本Kindle据说不行）可以用Epubor DRM Removal处理</p>
-</li>
-</ul>
-<ol start="3">
-<li>网站资源</li>
-</ol>
-<ul>
-<li>https://mlook.mobi/</li>
-<li>https://www.worldmiao.com/</li>
-<li>https://www.jiumodiary.com/</li>
-<li>(知网，万方等中英文，医学等等数据库入口)[https://31sanyi.neocities.org/]</li>
-<li>http://www.sstir.cn/</li>
-<li><a href="https://www.zjlib.cn/">浙江图书馆</a></li>
-</ul>
 ]]></content>
     </entry>
 </feed>
